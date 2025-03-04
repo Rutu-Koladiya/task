@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=7, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      body {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.8);
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        /* justify-content: center; */
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      .container {
+        border-radius: 5px;
+        padding: 0.6rem;
+      }
+      .click {
+        display: flex;
+      }
+      .btn {
+        color: aliceblue;
+        background-color: #4facfe;
+        font-size: 1rem;
+        padding: 0.6rem;
+        margin: 0.4rem;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+        width: 100%;
+      }
+      .btn:hover {
+        background-color: #3286f8;
+      }
+
+      .post-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem;
+        width: 100%;
+      }
+
+      .post {
+        border: 1px solid #4facfe;
+        border-radius: 5px;
+        padding: 1rem;
+        margin: 1rem 0;
+        background-color: rgba(255, 255, 255, 0.1);
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        width: 100%;
+      }
+
+      .title {
+        margin: 0;
+        padding-bottom: 0.5rem;
+        font-size: 1.5rem;
+        text-align: center;
+      }
+
+      .data {
+        margin: auto;
+        text-align: center;
+      }
+
+      .date-time {
+        padding-top: 0.6rem;
+        text-align: right;
+        font-size: 0.9rem;
+        color: #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome to the home page.</h1>
+      <div class="click">
+        <button class="btn logout-btn">Logout</button>
+        <button class="btn createPost">Post</button>
+      </div>
+    </div>
+
+    <div class="post-container">
+      <!-- <h1 class="title">Rutu</h1>
+        <p class="data">Hello I want to order pizza, garli bread and pepsi!</p>
+        <p class="data date-time"><b>Date: </b>21/01/25 19:56:04 PM</p> -->
+    </div>
+
+    <script>
+      const logoutBtn = document.querySelector(".logout-btn");
+      const postBtn = document.querySelector(".createPost");
+      const postContainer = document.querySelector(".post-container");
+      const isLoggedIn = sessionStorage.getItem("isLoggedIn");
+
+      logoutBtn.addEventListener("click", function () {
+        alert("Logout Successfully!");
+        sessionStorage.removeItem("isLoggedIn");
+        window.location.href = "201login.html";
+      });
+
+      postBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        if (!isLoggedIn) {
+          alert("You need to login post");
+          window.location.href = "201login.html";
+        } else {
+          window.location.href = "201post.html";
+        }
+      });
+
+      const posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+      if (posts.length === 0) {
+        postContainer.innerHTML = "<p>No posts yet. Create a new one!</p>";
+      } else {
+        posts.forEach((post) => {
+          const postElement = document.createElement("div");
+          postElement.classList.add("post");
+          postElement.innerHTML = `
+          <h1 class="title">${post.title}</h1>
+        <p class="data">${post.content}</p>
+        <p class="data date-time"><b>Date: </b>${post.date}</p>
+          `;
+          postContainer.appendChild(postElement);
+        });
+      }
+    </script>
+  </body>
+</html>

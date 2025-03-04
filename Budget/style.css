@@ -1,0 +1,184 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  border-bottom: 1px solid black;
+  height: 35%;
+  display: flex;
+  gap: 1.6rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 1.6rem;
+}
+
+.container h1 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.container p {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.income-box,
+.expense-box {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.income-box {
+  background-color: rgb(52, 137, 52);
+}
+
+.expense-box {
+  background-color: rgb(208, 81, 81);
+}
+
+.title {
+  font-weight: 500;
+}
+
+.balance {
+  color: azure;
+}
+
+.input-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  height: 10%;
+  background-color: rgb(242, 240, 238);
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-container select,
+input,
+button {
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+.input-container .description {
+  width: 32rem;
+}
+
+.input-container .value {
+  width: 8rem;
+}
+
+.input-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.input-container button:hover {
+  background-color: rgb(240, 240, 240);
+  transition: background-color 0.3s;
+  border: 1px solid black;
+}
+
+.transaction-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 0 10rem 0 10rem;
+}
+
+.transaction-container li {
+  list-style-type: none;
+}
+
+.income-container,
+.expense-container {
+  background-color: white;
+  margin: 3rem 4rem;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.income-container h3 {
+  color: rgb(52, 137, 52);
+}
+
+.expense-container h3 {
+  color: rgb(208, 81, 81);
+}
+
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.5rem;
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.transaction-item li {
+  flex: 1;
+  padding: 4px;
+}
+
+.transaction-item .income-amount {
+  color: rgb(52, 137, 52);
+  text-align: right;
+  min-width: 100px;
+}
+
+.transaction-item .expense-amount {
+  color: rgb(208, 81, 81);
+  text-align: right;
+  min-width: 100px;
+}
+
+.transaction-item .date {
+  text-align: center;
+  min-width: 182px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.transaction-item .desc {
+  text-align: left;
+  min-width: 150px;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 36px;
+  color: rgb(52, 137, 52);
+}

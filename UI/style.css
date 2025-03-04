@@ -1,0 +1,230 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(
+    to top,
+    #25c9fa,
+    #56d6fb,
+    #7fdffa,
+    #9de6fb,
+    #d3f4fb,
+    #f4fcfe
+  );
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+.right-container {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.right-container p {
+  padding: 0.1rem 0.3rem;
+  background-color: #f4fcfe;
+}
+
+.right-container .icons,
+.right-container .profile, .search-input input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.8rem;
+  width: 1.8rem;
+  cursor: pointer;
+}
+
+.right-container .icons {
+  border-radius: 0.4rem;
+}
+
+.right-container .profile {
+  width: auto;
+  border-radius: 1rem;
+  color: #25c9fa;
+  padding: 0.2rem 1rem;
+}
+
+.right-container .icons:hover, .profile:hover{
+  background-color: rgba(111, 202, 229, 0.2);
+  transform: scale(1.05);
+  font-weight: 500;
+  /* box-shadow: 0 2px 8px rgba(5, 194, 252, 0.3); */
+}
+
+.search-icon {
+  position: relative;
+  z-index: 1;
+}
+
+.search-input {
+  position: absolute;
+  z-index: 0;
+  right: 13.8rem;
+  top: 2.1rem;
+  animation: slideIn 0.4s ease forwards;
+}
+
+.on-hover {
+  display: none;
+}
+
+.search-input input {
+  padding: 0.10rem 1rem;
+  font-size: 1rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+  border: none;
+  outline: none;
+  width: 0;
+  transition: width 0.3s ease;
+  background-color: #f4fcfe;
+}
+
+.search-input:hover {
+  border: 1px 0 0 1px solid #25c9fa;
+}
+
+.search-input input.open {
+  width: 200px;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+main {
+  display: flex;
+  gap: 5.2rem;
+  margin: 1.8rem 2.8rem;
+}
+
+.side-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.side-container p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  background-color: #b0efffbf;
+  border-radius: 0.4rem;
+}
+
+.side-container .active {
+  background-color: #f4fcfe;
+  border-left: 4px solid #25c9fa;
+}
+
+.side-container .active .material-symbols-outlined {
+  color: #000000;
+  font-variation-settings: "FILL" 1;
+}
+
+
+.info-container {
+  color: #05c2fc;
+  font-weight: 600;
+  margin-top: -1.2rem;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #f4fcfe;
+  width: 12rem;
+  height: 11rem;
+  border-radius: 0.8rem;
+  margin: 0.8rem 0 0 0.4rem;
+  padding: 0.9rem 0.8rem 0 0.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.icons-container {
+  display: flex;
+  gap: 0.4rem;
+}
+
+.speed-info,
+.update-info,
+.info {
+  margin: 0.4rem 0;
+}
+
+.info-container p {
+  margin-bottom: 0.5rem;
+}
+
+.devices-name {
+  font-size: 1.4rem;
+}
+
+.blue-text {
+  color: #05c2fc;
+}
+
+sup {
+  font-size: 0.6rem;
+}
+
+.wave-one {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 14rem;
+  height: 3.6rem;
+}
+
+.wave-two {
+  position: absolute;
+  top: 9rem;
+  left: 0;
+  width: 14rem;
+}
+
+.card-container:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+}
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 36px;
+  color: #000000;
+}
+
+.filled-icon {
+  font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: #25c9fa;
+}
+
+.blue-icon {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  color: #25c9fa;
+  font-size: 48px;
+}

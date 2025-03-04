@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creat your post</title>
+    <style>
+      body {
+        color: white;
+        background-color: rgba(0, 0, 0, 0.8);
+        font-family: "Poppins", sans-serif;
+        display: flex;
+        justify-content: center;
+      }
+
+      .container {
+        padding-top: 6rem;
+      }
+
+      input {
+        padding: 0.6rem;
+        margin-bottom: 1rem;
+      }
+
+      #content {
+        border-radius: 5px;
+        padding: 0.4rem;
+      }
+
+      .click {
+        display: flex;
+        justify-content: center;
+      }
+      .btn {
+        color: aliceblue;
+        background-color: #4facfe;
+        font-size: 1rem;
+        padding: 0.6rem;
+        margin: 0.4rem;
+        border-radius: 5px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s;
+      }
+      .btn:hover {
+        background-color: #3286f8;
+      }
+      a {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <form action="">
+        <input type="text" placeholder="Enter your post title..." id="title"> <br>
+        <textarea
+          name="post"
+          id="content"
+          cols="80"
+          rows="8"
+          placeholder="Write your post here..."
+        ></textarea>
+        <div class="click"> 
+          <button class="btn submit-btn">Submit Post</button>
+          <a href="201home.html" class="btn home">Back to home</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const postTitle = document.querySelector("#title");
+      const postContent = document.querySelector("#content");
+      const submitBtn = document.querySelector(".submit-btn");
+
+      submitBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        const title = postTitle.value.trim();
+        const content = postContent.value.trim();
+        const postDate = new Date().toLocaleString();
+
+        if (title === '' || content === "") {
+          alert("Both title and post content are required!");
+        } else {
+          console.log(postTitle.value, postContent.value);
+
+          // create an objext for the post
+          const post = {
+            title: title,
+            content: content,
+            date: postDate,
+          };
+
+          // save the post to localstorage
+          let posts = JSON.parse(localStorage.getItem("posts")) || [];
+
+          // append the new post to the array
+          posts.push(post);
+
+          // save the updated array back to localstorage
+          localStorage.setItem("posts", JSON.stringify(posts));
+
+          console.log(posts);
+          
+          // redirect to the home page
+          window.location.href = "201home.html";
+        }
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget Web</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=send"
+    />
+    <script src="scrip.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <h1 class="display-month">Available Budget in February 2025:</h1>
+        <p class="budget-value">0.00</p>
+      </div>
+
+      <div class="summary">
+        <div class="income-box">
+          <p class="title">INCOME</p>
+          <p class="balance">+ 0</p>
+        </div>
+        <div class="expense-box">
+          <p class="title">EXPENSE</p>
+          <p class="balance">- 0</p>
+        </div>
+      </div>
+    </header>
+
+    <div class="input-container">
+      <select>
+        <option value="+">+</option>
+        <option value="-">-</option>
+      </select>
+
+      <input
+        class="description"
+        type="text"
+        placeholder="Add or search description"
+      />
+
+      <input class="value" type="number" placeholder="Value" />
+
+      <button><span class="material-symbols-outlined"> send </span></button>
+    </div>
+
+    <div class="transaction-container">
+      <div class="income-container">
+        <h3>INCOME</h3>
+        <div class="incomes">
+          <!-- <ul class="transaction-item ">
+          <li class="desc">Description</li>
+          <li class="date">Wednesday Feb 19,2025</li>
+          <li class="income-amount">+ 30,000</li>
+        </ul>
+        <ul class="transaction-item incomes">
+          <li class="desc">Description on the above and midddle </li>
+          <li class="date">Wednesday Feb 19,2025</li>
+          <li class="income-amount">+ 30,000</li>
+        </ul> -->
+        </div>
+      </div>
+
+      <div class="expense-container">
+        <h3>EXPENSE</h3>
+        <div class="expense">
+          <!-- <ul class="transaction-item expense">
+            <li class="desc">Description</li>
+            <li class="date">Wednesday Feb 19,2025</li>
+            <li class="expense-amount">- 30,000</li>
+          </ul> -->
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
